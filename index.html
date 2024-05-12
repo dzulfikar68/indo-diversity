@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bulma - Tabs</title>
+        <link rel="shortcut icon" href="images/fav_icon.png" type="image/x-icon">
+        <!-- Bulma Version 0.9.x -->
+        <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@1.0.0/css/bulma.min.css'>
+        <!-- <link rel="stylesheet" href="css/tabs.css"> -->
+        <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/nasgor.js"></script>
+    <!-- <script src="https://raw.githubusercontent.com/dzulfikar68/nasgor-js/master/nasgor.js"></script> -->
+    <script>
+            var listData = [
+                {
+                    navId: "nav-one",
+                    route: "nav1",
+                    containerId: "route",
+                    urlHtml: "pages/home.html"
+                },
+                {
+                    navId: "nav-two",
+                    route: "nav2",
+                    containerId: "route",
+                    urlHtml: "pages/about.html"
+                },
+            ]
+            
+            initNasgor({
+                "listData": listData,
+                "isCantLeaveApp": true,
+            }, {
+                onReady: function(id, route) {
+                    console.log(`ready: id:${id} route:${route}`)
+                },
+                onChange: function(id, route) {
+                    console.log(`change: id:${id} route:${route}`)
+                },
+                onPush: function(id, route) {
+                    console.log(`push: id:${id} route:${route}`)
+                },
+                onPop: function(id, route) {
+                    console.log(`pop: id:${id} route:${route}`)
+                },
+                onLastPop: function(id, route) {
+                    console.log(`LAST POP: id:${id} route:${route}`)
+                }
+            })
+    </script>
+    </head>
+    <body>
+        <nav class="navbar is-info">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--24lx9bs1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+                </a>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start is-link">
+                    <a class="navbar-item" href="https://github.com/BulmaTemplates/bulma-templates">
+                        Home
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="/documentation/overview/start/">
+                            Docs
+                        </a>
+                        <div class="navbar-dropdown is-boxed">
+                            <a id="nav-one" class="navbar-item" onclick="return false;">
+                                Admin
+                            </a>
+                            <a id="nav-two" class="navbar-item" onclick="return false;">
+                                Forum
+                            </a>
+                            <a class="navbar-item" href="cover.html">
+                                Cover
+                            </a>
+                            <a class="navbar-item" href="cards.html">
+                                Cards
+                            </a>
+                            <a class="navbar-item" href="blog.html">
+                                Blog
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="search.html">
+                                Search
+                            </a>
+                            <a class="navbar-item is-active" href="kanban.html">
+                                Kanban
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="#" target="_blank" href="https://twitter.com/intent/tweet?text=get free bulma templates:;url=https://github.com/BulmaTemplates/bulma-templates">
+                                    <span class="icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                    <span>
+                                        Tweet
+                                    </span>
+                                </a>
+                            </p>
+                            <p class="control">
+                                <a class="button is-primary" href="https://github.com/BulmaTemplates/bulma-templates">
+                                    <span class="icon">
+                                        <i class="fas fa-download"></i>
+                                    </span>
+                                    <span>Download</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="hero is-info">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                    Tabs
+                    </h1>
+                    <h2 class="subtitle">
+                    example
+                    </h2>
+                </div>
+            </div>
+            <div id="route"></div>
+        </section>
+
+        <script src="js/bulma.js"></script>
+    
+    </body>
+</html>
