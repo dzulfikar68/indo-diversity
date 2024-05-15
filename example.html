@@ -10,43 +10,6 @@
         <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/nasgor.js"></script>
-    <script>
-            var listData = [
-                {
-                    navId: "nav-home",
-                    route: "",
-                    containerId: "route",
-                    urlHtml: "pages/home.html"
-                },
-                {
-                    navId: "nav-bahasa",
-                    route: "bahasa",
-                    containerId: "route",
-                    urlHtml: "pages/bahasa.html"
-                },
-            ]
-            
-            initNasgor({
-                "listData": listData,
-                "isCantLeaveApp": true,
-            }, {
-                onReady: function(id, route) {
-                    console.log(`ready: id:${id} route:${route}`)
-                },
-                onChange: function(id, route) {
-                    console.log(`change: id:${id} route:${route}`)
-                },
-                onPush: function(id, route) {
-                    console.log(`push: id:${id} route:${route}`)
-                },
-                onPop: function(id, route) {
-                    console.log(`pop: id:${id} route:${route}`)
-                },
-                onLastPop: function(id, route) {
-                    console.log(`LAST POP: id:${id} route:${route}`)
-                }
-            })
-    </script>
     </head>
     <body>
         <nav class="navbar is-info">
@@ -68,35 +31,6 @@
                     <a class="navbar-item" id="nav-bahasa" onclick="return false;">
                         Bahasa Daerah
                     </a>
-                    <!-- <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" onclick="return false;">
-                            Docs
-                        </a>
-                        <div class="navbar-dropdown is-boxed">
-                            <a class="navbar-item" onclick="return false;">
-                                Admin
-                            </a>
-                            <a class="navbar-item" onclick="return false;">
-                                Forum
-                            </a>
-                            <a class="navbar-item" onclick="return false;">
-                                Cover
-                            </a>
-                            <a class="navbar-item" onclick="return false;">
-                                Cards
-                            </a>
-                            <a class="navbar-item" onclick="return false;">
-                                Blog
-                            </a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item" href="search.html">
-                                Search
-                            </a>
-                            <a class="navbar-item is-active" href="kanban.html">
-                                Kanban
-                            </a>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
@@ -127,6 +61,10 @@
         <div id="route"></div>
 
         <script src="js/bulma.js"></script>
+        <script>
+            $("#route").load("pages/bahasa.html")
+            $("#route").load("pages/home.html")
+        </script>
     
     </body>
 </html>
